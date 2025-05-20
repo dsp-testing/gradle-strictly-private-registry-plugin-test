@@ -1,23 +1,11 @@
-buildscript {
-    repositories {
-        maven {
-            url = uri("https://jfrogghdemo.jfrog.io/artifactory/dependabot/")
-            credentials {
-                username = "thavaahariharangit@github.com"
-                password = "${{ secrets.JFROG_ARTIFACTORY_TOKEN }}"
-            }
-        }
-    }
-    dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:3.4.3"
-    }
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.3'
 }
-
-apply plugin: 'java'
-apply plugin: 'org.springframework.boot'
 
 group = 'com.dependabot'
 version = '0.0.1-RELEASE'
+archivesBaseName = 'basic-pom'
 
 repositories {
     maven {
